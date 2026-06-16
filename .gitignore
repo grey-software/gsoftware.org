@@ -3,5 +3,6 @@ node_modules
 dist
 build
 .env
+.netlify
 logs/
 scripts/.env
