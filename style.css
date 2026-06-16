@@ -1,3 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-ink: #0f0f0f;
+  --color-paper: #f4f2eb;
+  --color-ink-light: #212121;
+  --color-paper-dark: #d7d5ce;
+  --color-blood: #892323;
+
+  --animate-slow-spin: spin 30s linear infinite;
+  --animate-spin-reverse: spin 40s linear infinite reverse;
+  --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+
 :root { --paper: #f4f2eb; --ink: #0f0f0f; }
 html, body { overflow-x: hidden; }
 body { background-color: var(--ink); color: var(--paper); }
