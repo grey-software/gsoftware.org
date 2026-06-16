@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grey Software: A Sanctuary from Hype</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Manrope"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          },
+          colors: {
+            ink: '#0f0f0f',
+            paper: '#f4f2eb',
+            'ink-light': '#212121',
+            'paper-dark': '#d7d5ce',
+            blood: '#892323',
+          },
+          animation: {
+            'slow-spin': 'spin 30s linear infinite',
+            'spin-reverse': 'spin 40s linear infinite reverse',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
+  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 bg-ink/80 backdrop-blur-md text-paper">
+    <div class="flex items-center gap-4 sm:gap-6 text-xs tracking-widest uppercase">
+      <a href="index.html" class="flex items-center">
+        <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
+      </a>
+      <a href="lineage.html" class="relative nav-link">Lineage</a>
+      <a href="impact.html" class="relative nav-link">Impact</a>
+      <a href="credits.html" class="relative nav-link">Credits</a>
+    </div>
+  </div>
+  <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
+
+  <main class="pt-12 md:pl-12 md:pr-12 min-h-screen">
+    <header class="min-h-[85vh] relative flex flex-col justify-center border-b frame-border">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30 flex items-center justify-center">
+        <svg class="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] animate-slow-spin text-paper" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.2">
+          <circle cx="50" cy="50" r="48" stroke-dasharray="2 4"/>
+          <circle cx="50" cy="50" r="35" />
+          <path d="M 50 2 L 50 98 M 2 50 L 98 50" />
+          <path d="M 15 15 L 85 85 M 15 85 L 85 15" stroke-dasharray="1 5"/>
+          <rect x="25" y="25" width="50" height="50" transform="rotate(45 50 50)" />
+        </svg>
+      </div>
+
+      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
+      <div class="crosshair top-0 right-0 translate-x-[6px] -translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 left-0 -translate-x-[6px] translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-16 relative w-full reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+          <div class="lg:col-span-11">
+            <h1 class="font-sans font-bold tracking-tight italic text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] text-paper mb-10">
+              Our grey matter<br />is more important<br />than ever.
+            </h1>
+            <p class="text-xl md:text-2xl font-light opacity-80 max-w-2xl leading-relaxed">
+              AI can generate the first draft. People still decide what is true, useful, and worth shipping.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="py-24 md:py-40 relative border-b frame-border">
+      <div class="crosshair bottom-0 left-0 -translate-x-[6px] translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
+          <div class="lg:col-span-5 reveal">
+            <div class="text-[10px] tracking-[0.2em] uppercase opacity-50 mb-8 flex items-center gap-4">
+              <span class="w-12 h-px bg-current opacity-30"></span> The Paradigm Shift
+            </div>
+            <h2 class="font-sans font-bold tracking-tight text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
+              The hard part is no longer the first draft. <span class="italic text-blood">It is knowing what deserves to ship.</span>
+            </h2>
+          </div>
+
+          <div class="lg:col-span-6 lg:col-start-7 text-base md:text-lg opacity-80 leading-relaxed reveal" style="transition-delay: 200ms;">
+            <p class="mb-8">
+              AI can produce code quickly. That does not make the work disappear. It moves the work toward reading, testing, editing, and judgment.
+            </p>
+            <div class="border-l border-blood pl-6 py-2 mb-8">
+              <p class="font-sans font-bold tracking-tight italic text-2xl md:text-3xl leading-snug">
+                Shipping code you do not understand is still debt. It piles up in architecture, maintenance, and trust.
+              </p>
+            </div>
+            <p class="mb-8">
+              That shift can still be hopeful. When the first draft is cheap, more people can build for needs the old system ignored: local workflows, smaller communities, underrepresented languages, and problems too specific for centralized companies to notice.
+            </p>
+            <p class="font-bold text-paper uppercase tracking-widest text-xs">
+              Understanding is the work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 md:py-40 relative border-b frame-border bg-paper-dark/5">
+      <div class="max-w-7xl mx-auto px-6 lg:px-16">
+        <div class="text-center mb-20 reveal">
+          <h3 class="font-sans font-bold tracking-tight italic text-5xl md:text-5xl mb-6">A Disciplined Optimism</h3>
+          <p class="opacity-60 max-w-xl mx-auto">There are people around the world who are underserved by technology. What helps is not speed by itself. It is clarity, access, and careful thought.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-paper/10 border frame-border reveal" style="transition-delay: 100ms;">
+          <div class="bg-ink p-10 flex flex-col justify-start group hover:bg-paper hover:text-ink transition-colors duration-500">
+            <div>
+              <h4 class="font-sans font-semibold tracking-tight text-2xl mb-4">Watch carefully.</h4>
+              <p class="text-sm opacity-50 leading-relaxed">Stay close to the work long enough to understand a tool's tradeoffs, limits, and real use before adopting it.</p>
+            </div>
+          </div>
+
+          <div class="bg-ink p-10 flex flex-col justify-start group hover:bg-paper hover:text-ink transition-colors duration-500">
+            <div>
+              <h4 class="font-sans font-semibold tracking-tight text-2xl mb-4">Check the work.</h4>
+              <p class="text-sm opacity-50 leading-relaxed">A confident answer still needs evidence. Read the code, test the claim, and say only what you can stand behind.</p>
+            </div>
+          </div>
+
+          <div class="bg-ink p-10 flex flex-col justify-start group hover:bg-paper hover:text-ink transition-colors duration-500">
+            <div>
+              <h4 class="font-sans font-semibold tracking-tight text-2xl mb-4">Own the result.</h4>
+              <p class="text-sm opacity-50 leading-relaxed">You are responsible for what you ship, whether you typed it yourself or shaped it from a generated draft.</p>
+            </div>
+          </div>
+
+          <div class="bg-ink p-10 flex flex-col justify-center items-center relative overflow-hidden group">
+            <svg class="w-full h-full text-paper opacity-10 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 animate-spin-reverse absolute" viewBox="0 0 100 100" stroke="currentColor" fill="none" stroke-width="0.5">
+              <rect x="25" y="25" width="50" height="50" />
+              <circle cx="50" cy="50" r="35" />
+            </svg>
+            <span class="relative z-10 text-[10px] uppercase tracking-[0.2em] text-center opacity-40">Human<br>Judgment<br>Still<br>Matters</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 md:py-40 relative border-b frame-border overflow-hidden">
+      <div class="absolute inset-x-0 top-0 h-px bg-current opacity-10"></div>
+      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-10 items-start">
+          <div class="lg:col-span-5 reveal lg:sticky lg:top-28">
+            <h3 class="font-sans font-bold tracking-tight italic text-5xl md:text-6xl leading-[1.05] mb-8">Start where the work becomes visible.</h3>
+            <p class="opacity-70 max-w-lg text-base md:text-lg leading-relaxed">
+              Good tools reduce distance. They let a learner inspect the thing itself, practice with real feedback, and learn what good work looks like.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7 reveal" style="transition-delay: 120ms;">
+            <div class="grid grid-cols-1 md:grid-cols-2 border-y frame-border">
+              <a href="https://scrimba.com/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 md:border-r frame-border border-b md:border-b frame-border">
+                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">Scrimba</h4>
+                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
+                  Interactive lessons that keep learners close to the code, the result, and the moment something finally makes sense.
+                </p>
+              </a>
+
+              <a href="https://freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 border-b frame-border">
+                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">freeCodeCamp</h4>
+                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
+                  Public, nonprofit technical education for people who need access without gatekeeping.
+                </p>
+              </a>
+
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 md:border-r frame-border">
+                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">GitHub</h4>
+                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
+                  Code, history, tradeoffs, and revisions in plain view. Read the work itself, not only the commentary around it.
+                </p>
+              </a>
+
+              <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 border-t md:border-t-0 frame-border">
+                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">Hugging Face</h4>
+                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
+                  Open models and datasets make AI easier to inspect, compare, and use with care.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 relative z-10">
+        <div>
+          <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-10 md:h-14 w-auto mb-8 object-contain" />
+          <div class="max-w-md opacity-60 leading-relaxed text-sm">
+            Open software. Open education. Open collaboration.<br>
+            Patient enough to understand. Optimistic enough to build what people actually need.
+          </div>
+        </div>
+
+        <div class="flex gap-16 text-xs uppercase tracking-widest">
+          <ul class="space-y-4">
+            <li class="opacity-40 border-b frame-border pb-2 mb-4">Internal</li>
+            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
+            <li><a href="impact.html" class="nav-link relative pb-1">Impact Ledger</a></li>
+            <li><a href="credits.html" class="nav-link relative pb-1">Credits</a></li>
+          </ul>
+          <ul class="space-y-4">
+            <li class="opacity-40 border-b frame-border pb-2 mb-4">Social</li>
+            <li><a href="https://www.linkedin.com/company/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/grey.software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">Instagram</a></li>
+            <li><a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>

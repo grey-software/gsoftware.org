@@ -1,0 +1,23 @@
+:root { --paper: #f4f2eb; --ink: #0f0f0f; }
+html, body { overflow-x: hidden; }
+body { background-color: var(--ink); color: var(--paper); }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: all 1.4s cubic-bezier(0.19, 1, 0.22, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.frame-border { border-color: rgba(244, 242, 235, 0.15); }
+
+.crosshair { position: absolute; width: 12px; height: 12px; pointer-events: none; }
+.crosshair::before, .crosshair::after { content: ''; position: absolute; background: currentColor; }
+.crosshair::before { width: 100%; height: 1px; top: 5px; left: 0; }
+.crosshair::after { width: 1px; height: 100%; top: 0; left: 5px; }
+
+.nav-link::before {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0%; height: 1px;
+  background: currentColor; transition: width 0.3s ease;
+}
+.nav-link:hover::before { width: 100%; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(244,242,235,0.2); }

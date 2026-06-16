@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lineage | Grey Software</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Manrope"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          },
+          colors: {
+            ink: '#0f0f0f',
+            paper: '#f4f2eb',
+            'ink-light': '#212121',
+            'paper-dark': '#d7d5ce',
+            blood: '#892323',
+          },
+          animation: {
+            'slow-spin': 'spin 30s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
+  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 bg-ink/80 backdrop-blur-md text-paper">
+    <div class="flex items-center gap-4 sm:gap-6 text-xs tracking-widest uppercase">
+      <a href="index.html" class="flex items-center">
+        <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
+      </a>
+      <a href="lineage.html" class="relative nav-link opacity-100 font-bold">Lineage</a>
+      <a href="impact.html" class="relative nav-link opacity-60">Impact</a>
+      <a href="credits.html" class="relative nav-link opacity-60">Credits</a>
+    </div>
+  </div>
+  <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
+
+  <main class="pt-12 md:pl-12 md:pr-12 min-h-screen">
+
+    <!-- HERO -->
+    <header class="min-h-[70vh] relative flex flex-col justify-center border-b frame-border">
+      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-16 relative w-full reveal">
+        <div class="text-[10px] tracking-[0.2em] uppercase opacity-50 mb-8 flex items-center gap-4">
+          <span class="w-12 h-px bg-current opacity-30"></span> The History People Should Know
+        </div>
+        <h1 class="font-sans font-bold tracking-tight italic text-6xl md:text-8xl leading-[0.95] text-paper mb-10">
+          We did not<br />start this.
+        </h1>
+        <p class="text-xl md:text-2xl font-light opacity-80 max-w-2xl leading-relaxed">
+          Open software, the open web, and free access to knowledge were built by people who insisted, often at real personal cost, that these things belong to everyone. This page is a debt acknowledged.
+        </p>
+      </div>
+    </header>
+
+    <!-- LEDGER -->
+    <section class="max-w-5xl mx-auto border-x frame-border my-24">
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">1945–1968</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Premise</div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Vannevar Bush &amp; Douglas Engelbart</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">Augmenting human intellect</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              Bush imagined the memex in 1945, a machine for following trails of linked knowledge. Engelbart spent his career on a single question: not whether machines could think, but whether they could help <em>us</em> think. His 1962 framework was called <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">Augmenting Human Intellect</span>, and his 1968 demo showed the mouse, hypertext, and live collaboration in one sitting.
+            </p>
+            <p>
+              The lineage begins here because the premise was set here: the computer is an instrument for human judgment, not a replacement for it. Grey matter first. Everything we believe is a footnote to that.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">1969–1978</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Craft</div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Dennis Ritchie &amp; Ken Thompson</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">Unix &amp; C</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              Unix and the C language were built small, legible, and composable, tools a single person could hold in their head. Their culture spread through universities largely because the source could be read and studied, and that habit of <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">learning by reading the source</span> became the seed of everything open that followed.
+            </p>
+            <p>
+              They are in this ledger for the craft standard: software as something understandable, built from simple parts, by people who respected the reader.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">1983</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Principle</div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Richard Stallman</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">GNU &amp; the Free Software Movement</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              When software started closing up, Stallman refused. Instead of just complaining, he started building a complete free operating system and wrote the legal machinery to protect it. The GPL's idea of <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">copyleft</span> turned copyright against enclosure: the freedom to run, study, modify, and share, guaranteed for everyone downstream.
+            </p>
+            <p>
+              "Free as in freedom, not as in price." Whatever one thinks of the man's edges, the principle held, and most of the modern software world quietly runs on it.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">1989–1993</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Gift</div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Tim Berners-Lee</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">The World Wide Web</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              He invented the web at CERN. Then, with CERN's agreement in 1993, he placed the underlying technology in the public domain. <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">No patent. No royalty. No permission required.</span> It is hard to name a larger act of deliberate generosity in the history of technology.
+            </p>
+            <p>
+              At the 2012 London Olympics he typed a message to the world from a NeXT computer like the one the web was born on: <em>"This is for everyone."</em> That sentence is the whole assignment.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">1991</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Proof</div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Linus Torvalds</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">Linux &amp; Git</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              A 21-year-old student in Helsinki posted that he was building an operating system, "just a hobby, won't be big and professional." Released under the GPL, built in public by thousands of strangers, Linux became the proof that <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">open collaboration can out-build closed institutions</span>. It now runs most of the internet, every Android phone, and the machines this site is served from.
+            </p>
+            <p>
+              Then he did it again with Git, the tool that made distributed collaboration ordinary. A student, far from the centres of capital, building for his own reality. We notice the pattern.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">2001</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Commons</div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Jimmy Wales, Larry Sanger, and Lawrence Lessig</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">Wikipedia &amp; Creative Commons</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              The same year, two projects bet that knowledge itself could be a commons. Wikipedia asked strangers to write an encyclopedia together and trusted them to check each other's work, a model of <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">verification as a community practice</span>. Lessig's Creative Commons gave creators the legal vocabulary to share on their own terms.
+            </p>
+            <p>
+              Both proved that openness is not naivety. It is a discipline, maintained by patient people, edit by edit.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
+          <div class="font-sans font-bold tracking-tight italic text-3xl">1986–2013</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Cost</div>
+          <div class="mt-auto pt-8">
+            <div class="w-3 h-3 bg-blood rounded-full shadow-[0_0_10px_rgba(137,35,35,0.8)]"></div>
+          </div>
+        </div>
+        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
+          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Aaron Swartz</h3>
+          <div class="text-xs uppercase tracking-widest text-blood mb-8">Open access to knowledge</div>
+          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
+            <p>
+              By his early twenties he had helped shape RSS, Creative Commons, Reddit, and Markdown. But his real work was a conviction: that publicly funded knowledge, including research, law, and scholarship, should be <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">publicly readable</span>. He liberated court records, fought for open access to journals, and helped organize the campaign that stopped SOPA.
+            </p>
+            <p>
+              Facing federal prosecution for downloading academic articles, he died in 2013 at twenty-six. The lineage page does not get to be only triumphant. Access to knowledge was fought for, and the fight had casualties. We remember him every time a learner anywhere reads something they could not have afforded.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- CLOSING -->
+    <section class="py-24 md:py-40 relative border-y frame-border overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 flex items-center justify-center">
+        <svg class="w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] animate-slow-spin text-paper" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.2">
+          <circle cx="50" cy="50" r="48" stroke-dasharray="2 4"/>
+          <circle cx="50" cy="50" r="35" />
+          <path d="M 50 2 L 50 98 M 2 50 L 98 50" />
+        </svg>
+      </div>
+      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
+      <div class="max-w-3xl mx-auto px-6 text-center relative reveal">
+        <h3 class="font-sans font-bold tracking-tight italic text-4xl md:text-6xl leading-[1.1] mb-8">
+          The next names in this ledger<br/>are learning to code right now.
+        </h3>
+        <p class="opacity-60 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Somewhere far from the centres of capital, in a language the big platforms forgot. Our job is to make sure they get their chance.
+        </p>
+      </div>
+    </section>
+
+    <footer class="max-w-5xl mx-auto border-x border-t frame-border bg-paper-dark/5 p-8 lg:p-12 flex flex-col md:flex-row justify-between items-center gap-8 relative reveal my-24">
+      <div class="crosshair bottom-0 left-0 -translate-x-[6px] translate-y-[6px]"></div>
+      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
+      <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-8 md:h-10 w-auto object-contain" />
+      <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-[10px] uppercase tracking-[0.2em] opacity-60">
+        <a href="index.html" class="nav-link relative">Home</a>
+        <a href="lineage.html" class="nav-link relative font-bold text-paper">Lineage</a>
+        <a href="impact.html" class="nav-link relative">Impact</a>
+        <a href="credits.html" class="nav-link relative">Credits</a>
+        <span class="opacity-25 hidden md:inline">/</span>
+        <a href="https://www.linkedin.com/company/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative">LinkedIn</a>
+        <a href="https://www.instagram.com/grey.software" target="_blank" rel="noopener noreferrer" class="nav-link relative">Instagram</a>
+        <a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative">GitHub</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
