@@ -4,45 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grey Software: A Sanctuary from Hype</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Manrope"', 'sans-serif'],
-            mono: ['"IBM Plex Mono"', 'monospace'],
-          },
-          colors: {
-            ink: '#0f0f0f',
-            paper: '#f4f2eb',
-            'ink-light': '#212121',
-            'paper-dark': '#d7d5ce',
-            blood: '#892323',
-          },
-          animation: {
-            'slow-spin': 'spin 30s linear infinite',
-            'spin-reverse': 'spin 40s linear infinite reverse',
-          }
-        }
-      }
-    }
-  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
-  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 bg-ink/80 backdrop-blur-md text-paper">
-    <div class="flex items-center gap-4 sm:gap-6 text-xs tracking-widest uppercase">
-      <a href="index.html" class="flex items-center">
-        <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
-      </a>
-      <a href="lineage.html" class="relative nav-link">Lineage</a>
+  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 lg:px-12 bg-ink/80 backdrop-blur-md text-paper">
+    <a href="index.html" class="flex items-center">
+      <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
+    </a>
+    <nav class="flex items-center gap-5 sm:gap-8 lg:gap-10 text-xs tracking-widest uppercase">
       <a href="impact.html" class="relative nav-link">Impact</a>
+      <a href="lineage.html" class="relative nav-link">Lineage</a>
       <a href="credits.html" class="relative nav-link">Credits</a>
-    </div>
+    </nav>
   </div>
   <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
 
@@ -152,7 +128,7 @@
       </div>
     </section>
 
-    <section class="py-24 md:py-40 relative border-b frame-border overflow-hidden">
+    <section class="py-24 md:py-40 relative overflow-hidden">
       <div class="absolute inset-x-0 top-0 h-px bg-current opacity-10"></div>
       <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
       <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
@@ -201,21 +177,18 @@
       </div>
     </section>
 
-    <footer class="py-24 relative overflow-hidden">
+    <footer class="py-24 relative overflow-hidden border-t frame-border">
       <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 relative z-10">
         <div>
           <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-10 md:h-14 w-auto mb-8 object-contain" />
-          <div class="max-w-md opacity-60 leading-relaxed text-sm">
-            Open software. Open education. Open collaboration.<br>
-            Patient enough to understand. Optimistic enough to build what people actually need.
-          </div>
         </div>
 
-        <div class="flex gap-16 text-xs uppercase tracking-widest">
+        <div class="flex gap-12 sm:gap-16 text-xs uppercase tracking-widest">
           <ul class="space-y-4">
             <li class="opacity-40 border-b frame-border pb-2 mb-4">Internal</li>
-            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
+            <li><a href="index.html" class="nav-link relative pb-1">Home</a></li>
             <li><a href="impact.html" class="nav-link relative pb-1">Impact Ledger</a></li>
+            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
             <li><a href="credits.html" class="nav-link relative pb-1">Credits</a></li>
           </ul>
           <ul class="space-y-4">
