@@ -4,3 +4,24 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# greysoftware.org is the main domain. The old domain and the Zenshu family address send people there.
+# Host-specific rules apply only on that host, so greysoftware.org and deploy previews are unaffected.
+[[redirects]]
+  from = "https://gsoftware.org/*"
+  to = "https://greysoftware.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.gsoftware.org/*"
+  to = "https://greysoftware.org/:splat"
+  status = 301
+  force = true
+
+# Temporary until the site has a Zenshu page; then this points there.
+[[redirects]]
+  from = "https://zenshu.greysoftware.org/*"
+  to = "https://greysoftware.org/"
+  status = 302
+  force = true
