@@ -1,15 +1,15 @@
 import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [tailwindcss()],
   build: {
     rollupOptions: {
       input: {
         main: './index.html',
+        about: './about/index.html',
         impact: './impact.html',
         lineage: './lineage.html',
         credits: './credits.html',
+        notFound: './404.html',
       },
     },
   },

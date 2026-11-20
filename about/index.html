@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Grey Software</title>
+<meta name="description" content="Grey Software is a registered Canadian nonprofit run by Arsala and Raj. Open software and open education, in a few short stances.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grey Software">
+<meta property="og:title" content="About | Grey Software">
+<meta property="og:description" content="A registered Canadian nonprofit run by Arsala and Raj. Open software and open education, in a few short stances.">
+<meta property="og:image" content="https://greysoftware.org/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Our grey matter is more important than ever. Open software and open education from a Canadian nonprofit.">
+<meta property="og:url" content="https://greysoftware.org/about/">
+<link rel="canonical" href="https://greysoftware.org/about/">
+<link rel="icon" href="../img/mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/mark-180.png">
+<link rel="preload" href="../fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script>
+/* Before first paint: turn the motion layer on, and split headlines into words as they are parsed, so nothing shifts or flashes when motion.js arrives. */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
+  // If motion.js never arrives, give the page back whole rather than leave entrances hidden.
+  setTimeout(() => { if (!window.gsMotion) document.documentElement.classList.remove('motion'); }, 4000);
+  window.gsSplit = el => {
+    if (!el || el.dataset.split === 'done') return;
+    const text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    el.dataset.split = 'done';
+  };
+})();
+</script>
+<style>
+  .about-head { padding: 2.25rem var(--gut) 1rem; }
+  .about-head .title { font-size: clamp(3rem, 13vw, 9rem); max-width: 5.8em; margin-bottom: 1.75rem; }
+  .about-head p { margin: 0; max-width: 32rem; font-size: 1.25rem; line-height: 1.45; font-weight: 500; }
+  .about-stances { padding: 0 var(--gut) 5rem; }
+  .about-stances .stances { margin-top: 3.5rem; }
+  .close { background: var(--black); color: var(--white); padding: 4.5rem var(--gut) 4.5rem; display: grid; gap: 2rem; }
+  .close .people { margin: 0; font-weight: 850; font-size: clamp(2.6rem, 11vw, 6.5rem); line-height: 0.92; letter-spacing: -0.045em; }
+  .close p.say { margin: 0 0 1.25rem; font-size: 1.25rem; color: var(--on-stage); }
+  .close ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid #3a3a3a; }
+  .close ul a { display: flex; justify-content: space-between; align-items: center; padding: 1.05rem 0; border-bottom: 1px solid #3a3a3a; text-decoration: none; font-weight: 750; font-size: clamp(1.6rem, 6vw, 2.6rem); letter-spacing: -0.03em; }
+  .close ul a::after { content: "\2197"; font-weight: 400; color: var(--on-stage-2); }
+  @media (min-width: 900px) {
+    .about-head { padding: 4.5rem var(--gut) 2rem; display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: end; }
+    .about-head .title { margin: 0; }
+    .about-stances .stances { margin-top: 5rem; }
+    .close { padding: 7rem var(--gut); grid-template-columns: 1fr 1fr; column-gap: 5rem; align-items: start; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#stances">Skip to what we stand for</a>
+<header class="top">
+  <a class="logo" href="../" aria-label="Grey Software, home"><img src="../img/logo-black.png" alt="Grey Software" width="717" height="108"></a>
+  <nav aria-label="Main"><a href="../#work">Work</a><a href="../impact.html">Impact</a><a href="./" aria-current="page">About</a></nav>
+</header>
+
+<main>
+  <section class="about-head">
+    <h1 class="title" data-split>Open software. Open education.</h1>
+    <script>window.gsSplit && gsSplit(document.currentScript.previousElementSibling)</script>
+    <p data-reveal style="--d:4">Made by a nonprofit and owned by the people who use them. Grey Software is registered in Canada and run by two people, Arsala and Raj.</p>
+  </section>
+
+  <section class="about-stances" id="stances" aria-label="What we stand for">
+    <ul class="stances">
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Our grey matter <span class="nb">is the work.</span></h2><p>Checking an answer before you trust it. Understanding a thing well enough to change it. Tools can draft, and the judging stays ours.</p></li>
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>A nonprofit, not a charity.</h2><p>Grey Software does not exist to turn a profit. We are not against large companies or AI. We use both, and push back on the shortcut that skips the understanding.</p></li>
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Fewer things, finished.</h2><p>Each tool does one job for the mind and does it carefully. Four are live as alphas, and they get better in public.</p></li>
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Built for the edges.</h2><p>Distance should not decide who gets good tools. We build for people far from where the decisions are made, learning mostly on their own.</p></li>
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Good work by others gets a shelf of its own.</h2><p>We point to what others build that we believe in, and we never slip our own apps in among it.</p></li>
+    </ul>
+  </section>
+
+  <section class="close" aria-label="Who we are">
+    <p class="people" data-reveal>Arsala and Raj</p>
+    <div data-reveal style="--d:1">
+      <p class="say">We run Grey Software together. Follow the work as it ships, or help fund it.</p>
+      <ul>
+        <li><a href="https://whatsapp.com/channel/0029VbEJRlFEgGfNVSzDet3q">WhatsApp channel</a></li>
+        <li><a href="https://github.com/sponsors/grey-software">Sponsor on GitHub</a></li>
+        <li><a href="https://github.com/grey-software">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/company/grey-software">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/greysoftware">Instagram</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-id">
+    <img src="../img/logo-black.png" alt="Grey Software" width="717" height="108" loading="lazy">
+    <p>A registered Canadian nonprofit, not a charity.</p>
+  </div>
+  <nav aria-label="Pages"><a href="../">Home</a><a href="./" aria-current="page">About</a><a href="../impact.html">Impact</a><a href="../lineage.html">Lineage</a><a href="../credits.html">Credits</a></nav>
+</footer>
+
+<script type="module" src="/motion.js"></script>
+</body>
+</html>

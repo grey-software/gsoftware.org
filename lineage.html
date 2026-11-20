@@ -1,318 +1,164 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Lineage | Grey Software</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lineage | Grey Software</title>
+<meta name="description" content="The people who built open software, the open web and free access to knowledge, from Ada Lovelace to Aaron Swartz.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grey Software">
+<meta property="og:title" content="Lineage | Grey Software">
+<meta property="og:description" content="The people who built what Grey Software stands on.">
+<meta property="og:image" content="https://greysoftware.org/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Our grey matter is more important than ever. Open software and open education from a Canadian nonprofit.">
+<meta property="og:url" content="https://greysoftware.org/lineage">
+<link rel="canonical" href="https://greysoftware.org/lineage">
+<link rel="icon" href="img/mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/mark-180.png">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+/* Before first paint: turn the motion layer on, and split headlines into words as they are parsed, so nothing shifts or flashes when motion.js arrives. */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
+  // If motion.js never arrives, give the page back whole rather than leave entrances hidden.
+  setTimeout(() => { if (!window.gsMotion) document.documentElement.classList.remove('motion'); }, 4000);
+  window.gsSplit = el => {
+    if (!el || el.dataset.split === 'done') return;
+    const text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    el.dataset.split = 'done';
+  };
+})();
+</script>
 </head>
-<body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
-  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 lg:px-12 bg-ink/80 backdrop-blur-md text-paper">
-    <a href="index.html" class="flex items-center">
-      <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
-    </a>
-    <nav class="flex items-center gap-5 sm:gap-8 lg:gap-10 text-xs tracking-widest uppercase">
-      <a href="impact.html" class="relative nav-link opacity-60">Impact</a>
-      <a href="lineage.html" class="relative nav-link opacity-100 font-bold">Lineage</a>
-      <a href="credits.html" class="relative nav-link opacity-60">Credits</a>
-    </nav>
+<body>
+<a class="skip" href="#record">Skip to the lineage</a>
+<header class="top">
+  <a class="logo" href="./" aria-label="Grey Software, home"><img src="img/logo-black.png" alt="Grey Software" width="717" height="108"></a>
+  <nav aria-label="Main"><a href="./#work">Work</a><a href="impact.html">Impact</a><a href="about/">About</a></nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <h1 class="title" data-split>We did not start this.</h1>
+    <script>window.gsSplit && gsSplit(document.currentScript.previousElementSibling)</script>
+    <p data-reveal style="--d:4">Open software, the open web, and free access to knowledge were built by people who insisted, often at personal cost, that these things belong to everyone. This page is a debt acknowledged.</p>
+  </section>
+
+  <section class="record" id="record" aria-label="The lineage">
+    <article class="entry" data-reveal>
+      <p class="when">1843</p>
+      <h2>Ada Lovelace <small>The first algorithm</small></h2>
+      <div class="body">
+        <p>A century before a working computer existed, Lovelace read Charles Babbage's plans for the Analytical Engine and saw further than its inventor did. In her notes she wrote out a step by step method for the machine to compute Bernoulli numbers, the thing we now recognize as the first published program. She also drew the line the rest of this page keeps returning to: the machine has no pretensions to originate anything; it can only do what we know how to order it to perform.</p>
+        <p>She is first here because she was first to imagine the computer as an instrument for human ideas rather than a calculator. The vision came before the hardware. It usually does.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1936 to 1950</p>
+      <h2>Alan Turing <small>The theory of computation</small></h2>
+      <div class="body">
+        <p>In 1936 Turing described an imaginary machine that could, given the right instructions, carry out any computation at all. That idea, the universal machine, is the reason a single device can run a browser, a compiler, and a language model. His wartime codebreaking helped end a war, and in 1950 he asked the question we are still arguing about: how would we even tell whether a machine can think?</p>
+        <p>Prosecuted for being gay, he died in 1954 at forty-one. A government that owed him a great deal treated him as a problem to be managed. The foundation of computing was laid by a man his own country punished, and this page does not get to forget the second half of that sentence.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1945 to 1968</p>
+      <h2>Vannevar Bush &amp; Douglas Engelbart <small>Augmenting human intellect</small></h2>
+      <div class="body">
+        <p>Bush imagined the memex in 1945, a machine for following trails of linked knowledge. Engelbart spent his career on a single question: could machines help <em>us</em> think? His 1962 framework was called Augmenting Human Intellect, and his 1968 demo showed the mouse, hypertext, and live collaboration in one sitting.</p>
+        <p>The lineage begins here because the premise was set here: the computer is an instrument for human judgment and leaves the judging to people. Grey matter first. Everything we believe is a footnote to that.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1952</p>
+      <h2>Grace Hopper <small>The compiler &amp; human-readable code</small></h2>
+      <div class="body">
+        <p>Programming once meant writing in raw machine numbers, a skill held by a tiny few. Hopper thought that was a waste. In 1952 she built A-0, one of the first compilers, a program that turns words a person can read into instructions a machine can run, and later drove the design of COBOL so that code could be written in something close to English. Every high level language since is downstream of that bet.</p>
+        <p>She belongs here because she widened the door. The lineage cares about who gets to build as well as what gets built, and Hopper spent her career making the work legible to more people than the system had planned for.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1969 to 1978</p>
+      <h2>Dennis Ritchie &amp; Ken Thompson <small>Unix &amp; C</small></h2>
+      <div class="body">
+        <p>Unix and the C language were built small, legible, and composable, tools a single person could hold in their head. Their culture spread through universities largely because the source could be read and studied, and that habit of learning by reading the source became the seed of everything open that followed.</p>
+        <p>They are here for the craft standard: software as something understandable, built from simple parts, by people who respected the reader.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1983</p>
+      <h2>Richard Stallman <small>GNU &amp; the Free Software Movement</small></h2>
+      <div class="body">
+        <p>When software started closing up, Stallman refused. Instead of only complaining, he started building a complete free operating system and wrote the legal machinery to protect it. The GPL's idea of copyleft turned copyright against enclosure: the freedom to run, study, modify, and share, guaranteed for everyone downstream.</p>
+        <p>His slogan asked people to think of free as in freedom, with price a separate matter. Whatever one thinks of the man's edges, the principle held, and most of the modern software world quietly runs on it.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1989 to 1993</p>
+      <h2>Tim Berners-Lee <small>The World Wide Web</small></h2>
+      <div class="body">
+        <p>He invented the web at CERN. Then, with CERN's agreement in 1993, he placed the underlying technology in the public domain. No patent. No royalty. No permission required. It is hard to name a larger act of deliberate generosity in the history of technology.</p>
+        <p>At the 2012 London Olympics he typed a message to the world from a NeXT computer like the one the web was born on: <em>"This is for everyone."</em> That sentence is the whole assignment.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1991</p>
+      <h2>Linus Torvalds <small>Linux &amp; Git</small></h2>
+      <div class="body">
+        <p>A 21-year-old student in Helsinki posted that he was building an operating system, "just a hobby, won't be big and professional." Released under the GPL, built in public by thousands of strangers, Linux became the proof that open collaboration can out-build closed institutions. It now runs most of the internet, every Android phone, and the machines this site is served from.</p>
+        <p>Then he did it again with Git, the tool that made distributed collaboration ordinary. A student, far from the centres of capital, building for his own reality. We notice the pattern.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">2001</p>
+      <h2>Jimmy Wales, Larry Sanger, and Lawrence Lessig <small>Wikipedia &amp; Creative Commons</small></h2>
+      <div class="body">
+        <p>The same year, two projects bet that knowledge itself could be a commons. Wikipedia asked strangers to write an encyclopedia together and trusted them to check each other's work, a model of verification as a community practice. Lessig's Creative Commons gave creators the legal vocabulary to share on their own terms.</p>
+        <p>Both showed that openness takes discipline, kept up by patient people, edit by edit.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">1986 to 2013</p>
+      <h2>Aaron Swartz <small>Open access to knowledge</small></h2>
+      <div class="body">
+        <p>By his early twenties he had helped shape RSS, Creative Commons, Reddit, and Markdown. His central work was a conviction: that publicly funded knowledge, including research, law, and scholarship, should be publicly readable. He liberated court records, fought for open access to journals, and helped organize the campaign that stopped SOPA.</p>
+        <p>Facing federal prosecution for downloading academic articles, he died in 2013 at twenty-six. This page cannot be only triumphant. Access to knowledge was fought for, and the fight had casualties. We remember him every time a learner anywhere reads something they could not have afforded.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-h">
+    <h2 id="cta-h" data-reveal>The next names here are learning to code right now.</h2>
+    <div data-reveal style="--d:1">
+      <p>Somewhere far from the centres of capital, in a language the big platforms forgot. They deserve their chance.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-id">
+    <img src="img/logo-black.png" alt="Grey Software" width="717" height="108" loading="lazy">
+    <p>A registered Canadian nonprofit, not a charity.</p>
   </div>
-  <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
+  <nav aria-label="Pages"><a href="./">Home</a><a href="about/">About</a><a href="impact.html">Impact</a><a href="lineage.html" aria-current="page">Lineage</a><a href="credits.html">Credits</a></nav>
+</footer>
 
-  <main class="pt-12 md:pl-12 md:pr-12 min-h-screen">
-
-    <!-- HERO -->
-    <header class="min-h-[70vh] relative flex flex-col justify-center border-b frame-border">
-      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 relative w-full reveal">
-        <div class="text-[10px] tracking-[0.2em] uppercase opacity-50 mb-8 flex items-center gap-4">
-          <span class="w-12 h-px bg-current opacity-30"></span> The History People Should Know
-        </div>
-        <h1 class="font-sans font-bold tracking-tight italic text-6xl md:text-8xl leading-[0.95] text-paper mb-10">
-          We did not<br />start this.
-        </h1>
-        <p class="text-xl md:text-2xl font-light opacity-80 max-w-2xl leading-relaxed">
-          Open software, the open web, and free access to knowledge were built by people who insisted, often at real personal cost, that these things belong to everyone. This page is a debt acknowledged.
-        </p>
-      </div>
-    </header>
-
-    <!-- LEDGER -->
-    <section class="max-w-5xl mx-auto border-x frame-border my-24">
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1843</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Vision</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Ada Lovelace</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">The first algorithm</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              A century before a working computer existed, Lovelace read Charles Babbage's plans for the Analytical Engine and saw further than its inventor did. In her notes she wrote out a step by step method for the machine to compute Bernoulli numbers, the thing we now recognize as <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">the first published program</span>. She also drew the line the rest of this page keeps returning to: the machine has no pretensions to originate anything; it can only do what we know how to order it to perform.
-            </p>
-            <p>
-              She is first in this ledger because she was first to imagine the computer as an instrument for human ideas rather than a calculator. The vision came before the hardware. It usually does.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1936–1950</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Foundation</div>
-          <div class="mt-auto pt-8">
-            <div class="w-3 h-3 bg-blood rounded-full shadow-[0_0_10px_rgba(137,35,35,0.8)]"></div>
-          </div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Alan Turing</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">The theory of computation</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              In 1936 Turing described an imaginary machine that could, given the right instructions, carry out any computation at all. That idea, <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">the universal machine</span>, is the reason a single device can run a browser, a compiler, and a language model. His wartime codebreaking helped end a war, and in 1950 he asked the question we are still arguing about: not whether a machine can think, but how we would even tell.
-            </p>
-            <p>
-              Prosecuted for being gay, he died in 1954 at forty-one. A government that owed him a great deal treated him as a problem to be managed. The foundation of computing was laid by a man his own country punished, and this ledger does not get to forget the second half of that sentence.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1945–1968</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Premise</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Vannevar Bush &amp; Douglas Engelbart</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">Augmenting human intellect</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              Bush imagined the memex in 1945, a machine for following trails of linked knowledge. Engelbart spent his career on a single question: not whether machines could think, but whether they could help <em>us</em> think. His 1962 framework was called <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">Augmenting Human Intellect</span>, and his 1968 demo showed the mouse, hypertext, and live collaboration in one sitting.
-            </p>
-            <p>
-              The lineage begins here because the premise was set here: the computer is an instrument for human judgment, not a replacement for it. Grey matter first. Everything we believe is a footnote to that.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1952</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Access</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Grace Hopper</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">The compiler &amp; human-readable code</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              Programming once meant writing in raw machine numbers, a skill held by a tiny few. Hopper thought that was a waste. She built the first compiler in 1952, a program that turns words a person can read into instructions a machine can run, and later drove the design of COBOL so that <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">code could be written in something close to English</span>. Every high level language since is downstream of that bet.
-            </p>
-            <p>
-              She belongs here because she widened the door. The lineage cares about who gets to build, not only what gets built, and Hopper spent her career making the work legible to more people than the system had planned for.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1969–1978</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Craft</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Dennis Ritchie &amp; Ken Thompson</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">Unix &amp; C</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              Unix and the C language were built small, legible, and composable, tools a single person could hold in their head. Their culture spread through universities largely because the source could be read and studied, and that habit of <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">learning by reading the source</span> became the seed of everything open that followed.
-            </p>
-            <p>
-              They are in this ledger for the craft standard: software as something understandable, built from simple parts, by people who respected the reader.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1983</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Principle</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Richard Stallman</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">GNU &amp; the Free Software Movement</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              When software started closing up, Stallman refused. Instead of just complaining, he started building a complete free operating system and wrote the legal machinery to protect it. The GPL's idea of <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">copyleft</span> turned copyright against enclosure: the freedom to run, study, modify, and share, guaranteed for everyone downstream.
-            </p>
-            <p>
-              "Free as in freedom, not as in price." Whatever one thinks of the man's edges, the principle held, and most of the modern software world quietly runs on it.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1989–1993</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Gift</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Tim Berners-Lee</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">The World Wide Web</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              He invented the web at CERN. Then, with CERN's agreement in 1993, he placed the underlying technology in the public domain. <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">No patent. No royalty. No permission required.</span> It is hard to name a larger act of deliberate generosity in the history of technology.
-            </p>
-            <p>
-              At the 2012 London Olympics he typed a message to the world from a NeXT computer like the one the web was born on: <em>"This is for everyone."</em> That sentence is the whole assignment.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1991</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Proof</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Linus Torvalds</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">Linux &amp; Git</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              A 21-year-old student in Helsinki posted that he was building an operating system, "just a hobby, won't be big and professional." Released under the GPL, built in public by thousands of strangers, Linux became the proof that <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">open collaboration can out-build closed institutions</span>. It now runs most of the internet, every Android phone, and the machines this site is served from.
-            </p>
-            <p>
-              Then he did it again with Git, the tool that made distributed collaboration ordinary. A student, far from the centres of capital, building for his own reality. We notice the pattern.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">2001</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Commons</div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Jimmy Wales, Larry Sanger, and Lawrence Lessig</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">Wikipedia &amp; Creative Commons</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              The same year, two projects bet that knowledge itself could be a commons. Wikipedia asked strangers to write an encyclopedia together and trusted them to check each other's work, a model of <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">verification as a community practice</span>. Lessig's Creative Commons gave creators the legal vocabulary to share on their own terms.
-            </p>
-            <p>
-              Both proved that openness is not naivety. It is a discipline, maintained by patient people, edit by edit.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">1986–2013</div>
-          <div class="text-[10px] uppercase tracking-[0.2em] opacity-40 mt-4">The Cost</div>
-          <div class="mt-auto pt-8">
-            <div class="w-3 h-3 bg-blood rounded-full shadow-[0_0_10px_rgba(137,35,35,0.8)]"></div>
-          </div>
-        </div>
-        <div class="md:col-span-3 p-8 lg:p-12 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-3">Aaron Swartz</h3>
-          <div class="text-xs uppercase tracking-widest text-blood mb-8">Open access to knowledge</div>
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              By his early twenties he had helped shape RSS, Creative Commons, Reddit, and Markdown. But his real work was a conviction: that publicly funded knowledge, including research, law, and scholarship, should be <span class="bg-paper text-ink px-2 py-0.5 font-bold uppercase">publicly readable</span>. He liberated court records, fought for open access to journals, and helped organize the campaign that stopped SOPA.
-            </p>
-            <p>
-              Facing federal prosecution for downloading academic articles, he died in 2013 at twenty-six. The lineage page does not get to be only triumphant. Access to knowledge was fought for, and the fight had casualties. We remember him every time a learner anywhere reads something they could not have afforded.
-            </p>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- CLOSING -->
-    <section class="py-24 md:py-40 relative border-t frame-border overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 flex items-center justify-center">
-        <svg class="w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] animate-slow-spin text-paper" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.2">
-          <circle cx="50" cy="50" r="48" stroke-dasharray="2 4"/>
-          <circle cx="50" cy="50" r="35" />
-          <path d="M 50 2 L 50 98 M 2 50 L 98 50" />
-        </svg>
-      </div>
-      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-      <div class="max-w-3xl mx-auto px-6 lg:px-0 text-center relative reveal">
-        <h3 class="font-sans font-bold tracking-tight italic text-4xl md:text-6xl leading-[1.1] mb-8">
-          The next names in this ledger are learning to code right now.
-        </h3>
-        <p class="opacity-60 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-          Somewhere far from the centres of capital, in a language the big platforms forgot. They deserve their chance.
-        </p>
-      </div>
-    </section>
-
-    <footer class="py-24 relative overflow-hidden border-t frame-border">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 relative z-10">
-        <div>
-          <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-10 md:h-14 w-auto mb-8 object-contain" />
-        </div>
-
-        <div class="flex gap-12 sm:gap-16 text-xs uppercase tracking-widest">
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Internal</li>
-            <li><a href="index.html" class="nav-link relative pb-1">Home</a></li>
-            <li><a href="impact.html" class="nav-link relative pb-1">Impact Ledger</a></li>
-            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
-            <li><a href="credits.html" class="nav-link relative pb-1">Credits</a></li>
-          </ul>
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Social</li>
-            <li><a href="https://www.linkedin.com/company/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/greysoftware" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">Instagram</a></li>
-            <li><a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">GitHub</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-      for (let i = 0; i < revealElements.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = revealElements[i].getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-          revealElements[i].classList.add('active');
-        }
-      }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
+<script type="module" src="/motion.js"></script>
 </body>
 </html>

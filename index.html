@@ -1,221 +1,168 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grey Software: A Sanctuary from Hype</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grey Software</title>
+<meta name="description" content="Grey Software is a Canadian nonprofit making open software and open education. Four apps are live as alphas: Zenshu Paper, Arcade, Garden and graphyti.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grey Software">
+<meta property="og:title" content="Our grey matter is more important than ever.">
+<meta property="og:description" content="Open software and open education from a Canadian nonprofit. Four apps are live as alphas.">
+<meta property="og:image" content="https://greysoftware.org/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Our grey matter is more important than ever. Open software and open education from a Canadian nonprofit.">
+<meta property="og:url" content="https://greysoftware.org/">
+<link rel="canonical" href="https://greysoftware.org/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/mark-180.png">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+/* Before first paint: turn the motion layer on, and split headlines into words as they are parsed, so nothing shifts or flashes when motion.js arrives. */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
+  // If motion.js never arrives, give the page back whole rather than leave entrances hidden.
+  setTimeout(() => { if (!window.gsMotion) document.documentElement.classList.remove('motion'); }, 4000);
+  window.gsSplit = el => {
+    if (!el || el.dataset.split === 'done') return;
+    const text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    el.dataset.split = 'done';
+  };
+})();
+</script>
 </head>
-<body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
-  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 lg:px-12 bg-ink/80 backdrop-blur-md text-paper">
-    <a href="index.html" class="flex items-center">
-      <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
-    </a>
-    <nav class="flex items-center gap-5 sm:gap-8 lg:gap-10 text-xs tracking-widest uppercase">
-      <a href="impact.html" class="relative nav-link">Impact</a>
-      <a href="lineage.html" class="relative nav-link">Lineage</a>
-      <a href="credits.html" class="relative nav-link">Credits</a>
-    </nav>
+<body>
+<a class="skip" href="#work">Skip to the four apps</a>
+<header class="top">
+  <a class="logo" href="./" aria-label="Grey Software, home"><img src="img/logo-black.png" alt="Grey Software" width="717" height="108"></a>
+  <nav aria-label="Main"><a href="#work">Work</a><a href="impact.html">Impact</a><a href="about/">About</a></nav>
+</header>
+
+<main>
+  <section class="belief" aria-label="What we believe">
+    <ol class="seen">
+      <li data-reveal style="--d:0">You are far from where the decisions get made.</li>
+      <li data-reveal style="--d:1">You are told a machine may make your work unnecessary.</li>
+      <li data-reveal style="--d:2">Most days, you work it out alone.</li>
+      <li data-reveal style="--d:3">You still care whether the work is right.</li>
+    </ol>
+    <h1 class="title" data-split>Our grey matter is more important than ever.</h1>
+    <script>window.gsSplit && gsSplit(document.currentScript.previousElementSibling)</script>
+    <div class="open">
+      <p class="openline" data-reveal style="--d:5">Open software and open education, made by a nonprofit and owned by the people who use them.</p>
+      <p class="who" data-reveal style="--d:6">Grey Software is registered in Canada and run by two people, Arsala and Raj.</p>
+    </div>
+    <ul class="stances">
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Practice over shortcuts.</h2><p>We keep doing mental maths though calculators exist, as we keep learning to program though AI can write code.</p></li>
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Understand enough to check the answer.</h2><p>Tools can draft. The judging stays ours, and it stays sharp only with use.</p></li>
+      <li data-scrub="ink" data-start="0.92" data-end="0.5"><h2>Built for the edges.</h2><p>Distance should not decide who gets good tools.</p></li>
+    </ul>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="work-h">
+    <h2 id="work-h" class="lead" data-reveal>Four apps, live today as alphas.</h2>
+
+    <article class="app" id="paper" aria-labelledby="a-paper">
+      <div class="copy">
+        <h3 id="a-paper" data-reveal>Zenshu Paper</h3>
+        <p class="why" data-reveal style="--d:1">A calculator gives you the answer. Paper gives you a quiet place to find your own.</p>
+        <p class="what" data-reveal style="--d:2">Mental maths in ink and brush, a few calm minutes a day. Each trick is shown, then practised in short rounds. No stars, streaks or scores.</p>
+        <a class="go" data-reveal style="--d:3" href="https://paper.zenshu.greysoftware.org">Open Paper<span class="sr"> at paper.zenshu.greysoftware.org</span></a>
+      </div>
+      <div class="screens" data-scrub="drift" data-reveal style="--d:2">
+        <picture class="s1"><source srcset="img/paper-today-sm.webp 390w, img/paper-today.webp 780w" sizes="(min-width: 900px) 18rem, 45vw" type="image/webp"><img src="img/paper-today.jpg" alt="Paper's Today page: the trick Double, double again, drawn as rows of ink dots, with tomorrow's trick below." width="780" height="1688" loading="lazy" decoding="async"></picture>
+        <picture class="s2"><source srcset="img/paper-round-sm.webp 390w, img/paper-round.webp 780w" sizes="(min-width: 900px) 18rem, 45vw" type="image/webp"><img src="img/paper-round.jpg" alt="A Paper round: three times eight worked as double, double, double, with an ink keypad." width="780" height="1688" loading="lazy" decoding="async"></picture>
+      </div>
+    </article>
+
+    <article class="app flip" id="arcade" aria-labelledby="a-arcade">
+      <div class="copy">
+        <h3 id="a-arcade" data-reveal>Zenshu Arcade</h3>
+        <p class="why" data-reveal style="--d:1">When a machine can do the working, there is still joy in learning the trick yourself.</p>
+        <p class="what" data-reveal style="--d:2">The same tricks as a game, with stars, boss rounds and a daily streak. Freestyle mixes any kinds you pick, from times tables to fractions.</p>
+        <a class="go" data-reveal style="--d:3" href="https://arcade.zenshu.greysoftware.org">Open Arcade<span class="sr"> at arcade.zenshu.greysoftware.org</span></a>
+      </div>
+      <div class="screens" data-scrub="drift" data-reveal style="--d:2">
+        <picture class="s1"><source srcset="img/arcade-today-sm.webp 390w, img/arcade-today.webp 780w" sizes="(min-width: 900px) 18rem, 45vw" type="image/webp"><img src="img/arcade-today.jpg" alt="Arcade's Today page on sky blue: the trick of the day as a card of dots, and a big play button." width="780" height="1688" loading="lazy" decoding="async"></picture>
+        <picture class="s2"><source srcset="img/arcade-freestyle-sm.webp 390w, img/arcade-freestyle.webp 780w" sizes="(min-width: 900px) 18rem, 45vw" type="image/webp"><img src="img/arcade-freestyle.jpg" alt="Arcade's Freestyle menu: every kind of question with its own picture, four of them picked." width="780" height="1688" loading="lazy" decoding="async"></picture>
+      </div>
+    </article>
+
+    <article class="app" id="garden" aria-labelledby="a-garden">
+      <div class="copy">
+        <h3 id="a-garden" data-reveal>Zenshu Garden</h3>
+        <p class="why" data-reveal style="--d:1">Patience is part of the method. Every round takes the time it needs.</p>
+        <p class="what" data-reveal style="--d:2">Times tables and mental maths in small, unhurried rounds. Each round you finish grows a shoot on your tree.</p>
+        <a class="go" data-reveal style="--d:3" href="https://garden.zenshu.greysoftware.org">Open Garden<span class="sr"> at garden.zenshu.greysoftware.org</span></a>
+      </div>
+      <div class="screens" data-scrub="drift" data-reveal style="--d:2">
+        <picture class="s1"><source srcset="img/garden-home-sm.webp 390w, img/garden-home.webp 780w" sizes="(min-width: 900px) 18rem, 45vw" type="image/webp"><img src="img/garden-home.jpg" alt="Garden's first page: a seedling under the words Your tree starts here." width="780" height="1688" loading="lazy" decoding="async"></picture>
+        <picture class="s2"><source srcset="img/garden-round-sm.webp 390w, img/garden-round.webp 780w" sizes="(min-width: 900px) 18rem, 45vw" type="image/webp"><img src="img/garden-round.jpg" alt="A Garden round: a new trick shown step by step above a keypad, on a soft green ground." width="780" height="1688" loading="lazy" decoding="async"></picture>
+      </div>
+    </article>
+
+    <article class="app wide" id="graphyti" aria-labelledby="a-graphyti">
+      <div class="copy">
+        <h3 id="a-graphyti" data-reveal>graphyti</h3>
+        <p class="why" data-reveal style="--d:1">A textbook is flat and a whiteboard is wiped by Monday. An idea in maths should be something you can turn over.</p>
+        <p class="what" data-reveal style="--d:2">Lessons that take vectors, matrices, functions and surfaces one idea at a time. Drag an arrow and watch where a matrix sends it.</p>
+        <a class="go" data-reveal style="--d:3" href="https://graphyti.greysoftware.org">Open graphyti<span class="sr"> at graphyti.greysoftware.org</span></a>
+      </div>
+      <div class="screens" data-scrub="drift" data-reveal style="--d:2">
+        <picture class="s1 desk"><source srcset="img/graphyti-matrix-sm.webp 1080w, img/graphyti-matrix.webp 2160w" sizes="(min-width: 900px) calc(100vw - 6rem), 100vw" type="image/webp"><img src="img/graphyti-matrix.jpg" alt="graphyti on a laptop: the lesson What a matrix does, with the unit arrows and where the matrix sends them, beside the list of lessons." width="2160" height="1350" loading="lazy" decoding="async"></picture>
+        <picture class="s2 phone"><source srcset="img/graphyti-lessons-sm.webp 390w, img/graphyti-lessons.webp 780w" sizes="18rem" type="image/webp"><img src="img/graphyti-lessons.jpg" alt="graphyti on a phone: the list of lessons, from points, lines and planes to what a matrix does." width="780" height="1688" loading="lazy" decoding="async"></picture>
+      </div>
+    </article>
+  </section>
+
+  <section class="shelf" id="shelf" aria-labelledby="shelf-h">
+    <h2 id="shelf-h" data-reveal>Others build things we believe in.</h2>
+    <ul class="rows">
+      <li data-reveal><a href="https://github.com/ossu/computer-science">OSSU computer science</a><p>A whole undergraduate path in computer science, built from free online courses, with a community to study alongside.</p><p class="cost">Years of self-discipline, and no degree at the end.</p></li>
+      <li data-reveal><a href="https://github.com/practical-tutorials/project-based-learning">Project based learning</a><p>Tutorials that teach a language by building a whole app in it.</p><p class="cost">A long list of links, so quality varies.</p></li>
+      <li data-reveal><a href="https://github.com/redblobgames/mapgen4">Mapgen4</a><p>A map generator by Red Blob Games that redraws as you paint, with how it works written up as a blog series.</p><p class="cost">No longer maintained.</p></li>
+      <li data-reveal><a href="https://github.com/chrislgarry/Apollo-11">Apollo 11 guidance computer</a><p>The 1969 flight software that landed on the Moon, kept as source to read.</p><p class="cost">Written in the guidance computer's assembly. You read it, you do not run it.</p></li>
+      <li data-reveal><a href="https://github.com/LadybirdBrowser/ladybird">Ladybird</a><p>A new, independent browser engine, written from the web's own standards.</p><p class="cost">Pre-alpha, and for developers for now.</p></li>
+      <li data-reveal><a href="https://github.com/alex-w-developer/GetBlocked">GetBlocked</a><p>A small Chrome extension that blocks trackers and cleans tracking links, all on your own machine.</p><p class="cost">A starter blocklist, and Chrome only.</p></li>
+    </ul>
+    <a class="prsm" data-reveal href="https://presm.netlify.app/resources"><span>The rest are in PRSM, Raj's shared collection of resources.</span><b>Open PRSM</b></a>
+  </section>
+
+  <section class="join" id="join" aria-labelledby="join-h">
+    <h2 id="join-h" data-reveal>Follow the work, or help fund it.</h2>
+    <ul class="ways">
+      <li data-reveal><a href="https://whatsapp.com/channel/0029VbEJRlFEgGfNVSzDet3q"><b>WhatsApp channel</b><span>New apps and rounds as they ship.</span></a></li>
+      <li data-reveal style="--d:1"><a href="https://github.com/sponsors/grey-software"><b>Sponsor on GitHub</b><span>Sponsorship keeps this work going and pays it forward.</span></a></li>
+      <li class="small" data-reveal style="--d:2"><a href="https://github.com/grey-software">GitHub</a><a href="https://www.linkedin.com/company/grey-software">LinkedIn</a><a href="https://www.instagram.com/greysoftware">Instagram</a></li>
+    </ul>
+
+    <div class="gives" aria-labelledby="gives-h">
+      <h3 id="gives-h" data-reveal>Who we sponsor</h3>
+      <ul class="rows">
+        <li data-reveal><b>Open source maintainers</b><p>Recurring support since 2020, through GitHub Sponsors, to seventeen maintainers and projects, Babel and OxyHQ among them.</p><p class="cost">$3,128 to date, about $139 a month active.</p></li>
+        <li data-reveal><b>Pashto language models</b><p>A four-month research grant to Junaid Ahmad, who builds language models and speech recognition for Pashto and other underserved languages in Pakistan.</p><p class="cost">$600 over four months, 2026.</p></li>
+        <li data-reveal><b>Code for Pakistan hackathon</b><p>Prizes for the winning teams of a civic tech hackathon: a direct donation, and Scrimba subscriptions we arranged.</p><p class="cost">$300 and $1,000 in subscriptions, June 2026.</p></li>
+      </ul>
+      <p class="more" data-reveal><a href="impact.html">The full ledger</a> <a href="credits.html">Who sponsors us</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-id">
+    <img src="img/logo-black.png" alt="Grey Software" width="717" height="108" loading="lazy">
+    <p>A registered Canadian nonprofit, not a charity.</p>
   </div>
-  <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
+  <nav aria-label="Pages"><a href="./">Home</a><a href="about/">About</a><a href="impact.html">Impact</a><a href="lineage.html">Lineage</a><a href="credits.html">Credits</a></nav>
+</footer>
 
-  <main class="pt-12 md:pl-12 md:pr-12 min-h-screen">
-    <header class="min-h-[85vh] relative flex flex-col justify-center border-b frame-border">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30 flex items-center justify-center">
-        <svg class="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] animate-slow-spin text-paper" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.2">
-          <circle cx="50" cy="50" r="48" stroke-dasharray="2 4"/>
-          <circle cx="50" cy="50" r="35" />
-          <path d="M 50 2 L 50 98 M 2 50 L 98 50" />
-          <path d="M 15 15 L 85 85 M 15 85 L 85 15" stroke-dasharray="1 5"/>
-          <rect x="25" y="25" width="50" height="50" transform="rotate(45 50 50)" />
-        </svg>
-      </div>
-
-      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair top-0 right-0 translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 left-0 -translate-x-[6px] translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 relative w-full reveal">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-          <div class="lg:col-span-11">
-            <h1 class="font-sans font-bold tracking-tight italic text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] text-paper mb-10">
-              Our grey matter<br />is more important<br />than ever.
-            </h1>
-            <p class="text-xl md:text-2xl font-light opacity-80 max-w-2xl leading-relaxed">
-              AI can generate the first draft. People still decide what is true, useful, and worth shipping.
-            </p>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="py-24 md:py-40 relative border-b frame-border">
-      <div class="crosshair bottom-0 left-0 -translate-x-[6px] translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
-          <div class="lg:col-span-5 reveal">
-            <div class="text-[10px] tracking-[0.2em] uppercase opacity-50 mb-8 flex items-center gap-4">
-              <span class="w-12 h-px bg-current opacity-30"></span> The Paradigm Shift
-            </div>
-            <h2 class="font-sans font-bold tracking-tight text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
-              The hard part is no longer the first draft. <span class="italic text-blood">It is knowing what deserves to ship.</span>
-            </h2>
-          </div>
-
-          <div class="lg:col-span-6 lg:col-start-7 text-base md:text-lg opacity-80 leading-relaxed reveal" style="transition-delay: 200ms;">
-            <p class="mb-8">
-              AI can produce code quickly. That does not make the work disappear. It moves the work toward reading, testing, editing, and judgment.
-            </p>
-            <div class="border-l border-blood pl-6 py-2 mb-8">
-              <p class="font-sans font-bold tracking-tight italic text-2xl md:text-3xl leading-snug">
-                Shipping code you do not understand is still debt. It piles up in architecture, maintenance, and trust.
-              </p>
-            </div>
-            <p class="mb-8">
-              That shift can still be hopeful. When the first draft is cheap, more people can build for needs the old system ignored: local workflows, smaller communities, underrepresented languages, and problems too specific for centralized companies to notice.
-            </p>
-            <p class="font-bold text-paper uppercase tracking-widest text-xs">
-              Understanding is the work.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 md:py-40 relative border-b frame-border bg-paper-dark/5">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16">
-        <div class="text-center mb-20 reveal">
-          <h3 class="font-sans font-bold tracking-tight italic text-5xl md:text-5xl mb-6">A Disciplined Optimism</h3>
-          <p class="opacity-60 max-w-xl mx-auto">There are people around the world who are underserved by technology. What helps is not speed by itself. It is clarity, access, and careful thought.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-paper/10 border frame-border reveal" style="transition-delay: 100ms;">
-          <div class="bg-ink p-10 flex flex-col justify-start group hover:bg-paper hover:text-ink transition-colors duration-500">
-            <div>
-              <h4 class="font-sans font-semibold tracking-tight text-2xl mb-4">Watch carefully.</h4>
-              <p class="text-sm opacity-50 leading-relaxed">Stay close to the work long enough to understand a tool's tradeoffs, limits, and real use before adopting it.</p>
-            </div>
-          </div>
-
-          <div class="bg-ink p-10 flex flex-col justify-start group hover:bg-paper hover:text-ink transition-colors duration-500">
-            <div>
-              <h4 class="font-sans font-semibold tracking-tight text-2xl mb-4">Check the work.</h4>
-              <p class="text-sm opacity-50 leading-relaxed">A confident answer still needs evidence. Read the code, test the claim, and say only what you can stand behind.</p>
-            </div>
-          </div>
-
-          <div class="bg-ink p-10 flex flex-col justify-start group hover:bg-paper hover:text-ink transition-colors duration-500">
-            <div>
-              <h4 class="font-sans font-semibold tracking-tight text-2xl mb-4">Own the result.</h4>
-              <p class="text-sm opacity-50 leading-relaxed">You are responsible for what you ship, whether you typed it yourself or shaped it from a generated draft.</p>
-            </div>
-          </div>
-
-          <div class="bg-ink p-10 flex flex-col justify-center items-center relative overflow-hidden group">
-            <svg class="w-full h-full text-paper opacity-10 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 animate-spin-reverse absolute" viewBox="0 0 100 100" stroke="currentColor" fill="none" stroke-width="0.5">
-              <rect x="25" y="25" width="50" height="50" />
-              <circle cx="50" cy="50" r="35" />
-            </svg>
-            <span class="relative z-10 text-[10px] uppercase tracking-[0.2em] text-center opacity-40">Human<br>Judgment<br>Still<br>Matters</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 md:py-40 relative overflow-hidden">
-      <div class="absolute inset-x-0 top-0 h-px bg-current opacity-10"></div>
-      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-10 items-start">
-          <div class="lg:col-span-5 reveal lg:sticky lg:top-28">
-            <h3 class="font-sans font-bold tracking-tight italic text-5xl md:text-6xl leading-[1.05] mb-8">Start where the work becomes visible.</h3>
-            <p class="opacity-70 max-w-lg text-base md:text-lg leading-relaxed">
-              Good tools reduce distance. They let a learner inspect the thing itself, practice with real feedback, and learn what good work looks like.
-            </p>
-          </div>
-
-          <div class="lg:col-span-7 reveal" style="transition-delay: 120ms;">
-            <div class="grid grid-cols-1 md:grid-cols-2 border-y frame-border">
-              <a href="https://scrimba.com/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 md:border-r frame-border border-b md:border-b frame-border">
-                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">Scrimba</h4>
-                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
-                  Interactive lessons that keep learners close to the code, the result, and the moment something finally makes sense.
-                </p>
-              </a>
-
-              <a href="https://freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 border-b frame-border">
-                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">freeCodeCamp</h4>
-                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
-                  Public, nonprofit technical education for people who need access without gatekeeping.
-                </p>
-              </a>
-
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 md:border-r frame-border">
-                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">GitHub</h4>
-                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
-                  Code, history, tradeoffs, and revisions in plain view. Read the work itself, not only the commentary around it.
-                </p>
-              </a>
-
-              <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" class="group block py-10 md:p-10 border-t md:border-t-0 frame-border">
-                <h4 class="font-sans font-bold tracking-tight italic text-3xl mb-5 group-hover:text-blood transition-colors">Hugging Face</h4>
-                <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-90 transition-opacity">
-                  Open models and datasets make AI easier to inspect, compare, and use with care.
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="py-24 relative overflow-hidden border-t frame-border">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 relative z-10">
-        <div>
-          <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-10 md:h-14 w-auto mb-8 object-contain" />
-        </div>
-
-        <div class="flex gap-12 sm:gap-16 text-xs uppercase tracking-widest">
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Internal</li>
-            <li><a href="index.html" class="nav-link relative pb-1">Home</a></li>
-            <li><a href="impact.html" class="nav-link relative pb-1">Impact Ledger</a></li>
-            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
-            <li><a href="credits.html" class="nav-link relative pb-1">Credits</a></li>
-          </ul>
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Social</li>
-            <li><a href="https://www.linkedin.com/company/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/greysoftware" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">Instagram</a></li>
-            <li><a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">GitHub</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-      for (let i = 0; i < revealElements.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = revealElements[i].getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-          revealElements[i].classList.add('active');
-        }
-      }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
+<script type="module" src="/motion.js"></script>
 </body>
 </html>
