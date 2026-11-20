@@ -25,3 +25,9 @@
   to = "https://greysoftware.org/"
   status = 302
   force = true
+
+# The new site's About lives at /about/. The old site had no About, so this only catches a guessed address.
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301

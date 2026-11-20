@@ -1,182 +1,131 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Credits | Grey Software</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Credits | Grey Software</title>
+<meta name="description" content="Thank you to everyone who has sponsored or donated to Grey Software, from GitHub sponsors to individual donors.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grey Software">
+<meta property="og:title" content="Credits | Grey Software">
+<meta property="og:description" content="The people who made Grey Software's work possible.">
+<meta property="og:image" content="https://greysoftware.org/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Our grey matter is more important than ever. Open software and open education from a Canadian nonprofit.">
+<meta property="og:url" content="https://greysoftware.org/credits">
+<link rel="canonical" href="https://greysoftware.org/credits">
+<link rel="icon" href="img/mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/mark-180.png">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+/* Before first paint: turn the motion layer on, and split headlines into words as they are parsed, so nothing shifts or flashes when motion.js arrives. */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
+  // If motion.js never arrives, give the page back whole rather than leave entrances hidden.
+  setTimeout(() => { if (!window.gsMotion) document.documentElement.classList.remove('motion'); }, 4000);
+  window.gsSplit = el => {
+    if (!el || el.dataset.split === 'done') return;
+    const text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    el.dataset.split = 'done';
+  };
+})();
+</script>
 </head>
-<body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
-  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 lg:px-12 bg-ink/80 backdrop-blur-md text-paper">
-    <a href="index.html" class="flex items-center">
-      <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
-    </a>
-    <nav class="flex items-center gap-5 sm:gap-8 lg:gap-10 text-xs tracking-widest uppercase">
-      <a href="impact.html" class="relative nav-link opacity-60">Impact</a>
-      <a href="lineage.html" class="relative nav-link opacity-60">Lineage</a>
-      <a href="credits.html" class="relative nav-link opacity-100 font-bold">Credits</a>
-    </nav>
+<body>
+<a class="skip" href="#record">Skip to the list</a>
+<header class="top">
+  <a class="logo" href="./" aria-label="Grey Software, home"><img src="img/logo-black.png" alt="Grey Software" width="717" height="108"></a>
+  <nav aria-label="Main"><a href="./#work">Work</a><a href="impact.html">Impact</a><a href="about/">About</a></nav>
+</header>
+
+<main>
+  <section class="page-head">
+    <h1 class="title" data-split>Thank you.</h1>
+    <script>window.gsSplit && gsSplit(document.currentScript.previousElementSibling)</script>
+    <p data-reveal style="--d:4">Grey Software runs on small, recurring acts of generosity. Some sent a few dollars a month for years. Every name here helped keep open software, open education, and open collaboration funded.</p>
+  </section>
+
+  <section class="record" id="record" aria-label="The thank-you list">
+    <article class="entry" data-reveal>
+      <p class="when">Since 2020</p>
+      <h2>GitHub Sponsors</h2>
+      <div class="body">
+        <p>Everyone who has sponsored us on GitHub since 2020, listed by handle in alphabetical order. Some sponsorships are still active and some have ended. The thanks do not expire.</p>
+        <ul class="names" aria-label="GitHub sponsors">
+          <li>AKhan2021</li>
+          <li>AngelaKwan</li>
+          <li>ArsalaBangash</li>
+          <li>arthursoenarto</li>
+          <li>bangashghaffar</li>
+          <li>BKMAPK</li>
+          <li>daveavi</li>
+          <li>distinctmind</li>
+          <li>dokom</li>
+          <li>hiimchrislim</li>
+          <li>khans218</li>
+          <li>Luid101</li>
+          <li>lunaroyster</li>
+          <li>lunavarro22</li>
+          <li>masterrom</li>
+          <li>maticzav</li>
+          <li>MGMoose</li>
+          <li>milindvishnoi</li>
+          <li>mkbangash</li>
+          <li>NimJay</li>
+          <li>ninaricci29</li>
+          <li>noumanjee</li>
+          <li>OsamaSaleh289</li>
+          <li>saminabangash</li>
+          <li>SantiagoOrdonez</li>
+          <li>saraelshawa</li>
+          <li>ShoaibKhan</li>
+          <li>ujan75</li>
+          <li>Anonymous</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">Direct gifts</p>
+      <h2>Individual donors</h2>
+      <div class="body">
+        <p>People who gave directly. One-time and direct contributions, from friends, colleagues, and strangers who believed in the work.</p>
+        <ul class="names" aria-label="Individual donors">
+          <li>J. Mukherjee</li>
+          <li>S. Hu</li>
+          <li>S. El-Shawa</li>
+          <li>U. Jan</li>
+          <li>A. Malpani</li>
+          <li>J. Jacks</li>
+          <li>S. Bangash</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-h">
+    <h2 id="cta-h" data-reveal>Want to join them?</h2>
+    <div data-reveal style="--d:1">
+      <p>Sponsorship keeps this work going and pays it forward to the next builder who needs it.</p>
+      <p style="margin-top:1.5rem"><a class="go" href="https://github.com/sponsors/grey-software">Sponsor on GitHub</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-id">
+    <img src="img/logo-black.png" alt="Grey Software" width="717" height="108" loading="lazy">
+    <p>A registered Canadian nonprofit, not a charity.</p>
   </div>
-  <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
+  <nav aria-label="Pages"><a href="./">Home</a><a href="about/">About</a><a href="impact.html">Impact</a><a href="lineage.html">Lineage</a><a href="credits.html" aria-current="page">Credits</a></nav>
+</footer>
 
-  <main class="pt-12 md:pl-12 md:pr-12 min-h-screen">
-
-    <!-- HERO -->
-    <header class="min-h-[60vh] relative flex flex-col justify-center border-b frame-border">
-      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 relative w-full reveal">
-        <div class="text-[10px] tracking-[0.2em] uppercase opacity-50 mb-8 flex items-center gap-4">
-          <span class="w-12 h-px bg-current opacity-30"></span> The People Who Made It Possible
-        </div>
-        <h1 class="font-sans font-bold tracking-tight italic text-6xl md:text-8xl leading-[0.95] text-paper mb-10">
-          Thank you.
-        </h1>
-        <p class="text-xl md:text-2xl font-light opacity-80 max-w-2xl leading-relaxed">
-          Grey Software runs on small, recurring acts of generosity. Some sent a few dollars a month for years. Every name here helped keep open software, open education, and open collaboration funded.
-        </p>
-      </div>
-    </header>
-
-    <!-- GITHUB SPONSORS -->
-    <section class="py-24 md:py-32 relative border-b frame-border">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16">
-        <div class="reveal mb-16">
-          <div class="text-xs uppercase tracking-widest text-blood mb-6">GitHub Sponsors</div>
-          <h2 class="font-sans font-bold tracking-tight text-4xl md:text-5xl leading-[1.1] max-w-3xl">
-            Everyone who has sponsored us on GitHub since 2020.
-          </h2>
-          <p class="opacity-60 max-w-xl mt-6 leading-relaxed">
-            Listed by handle, in alphabetical order. Some sponsorships are still active, some have ended. The thanks do not expire.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-paper/10 border frame-border reveal">
-          <a href="https://github.com/AKhan2021" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">AKhan2021</span></a>
-          <a href="https://github.com/AngelaKwan" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">AngelaKwan</span></a>
-          <a href="https://github.com/ArsalaBangash" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">ArsalaBangash</span></a>
-          <a href="https://github.com/arthursoenarto" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">arthursoenarto</span></a>
-          <a href="https://github.com/bangashghaffar" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">bangashghaffar</span></a>
-          <a href="https://github.com/BKMAPK" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">BKMAPK</span></a>
-          <a href="https://github.com/daveavi" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">daveavi</span></a>
-          <a href="https://github.com/distinctmind" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">distinctmind</span></a>
-          <a href="https://github.com/dokom" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">dokom</span></a>
-          <a href="https://github.com/hiimchrislim" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">hiimchrislim</span></a>
-          <a href="https://github.com/khans218" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">khans218</span></a>
-          <a href="https://github.com/Luid101" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">Luid101</span></a>
-          <a href="https://github.com/lunaroyster" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">lunaroyster</span></a>
-          <a href="https://github.com/lunavarro22" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">lunavarro22</span></a>
-          <a href="https://github.com/masterrom" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">masterrom</span></a>
-          <a href="https://github.com/maticzav" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">maticzav</span></a>
-          <a href="https://github.com/MGMoose" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">MGMoose</span></a>
-          <a href="https://github.com/milindvishnoi" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">milindvishnoi</span></a>
-          <a href="https://github.com/mkbangash" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">mkbangash</span></a>
-          <a href="https://github.com/NimJay" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">NimJay</span></a>
-          <a href="https://github.com/ninaricci29" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">ninaricci29</span></a>
-          <a href="https://github.com/noumanjee" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">noumanjee</span></a>
-          <a href="https://github.com/OsamaSaleh289" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">OsamaSaleh289</span></a>
-          <a href="https://github.com/saminabangash" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">saminabangash</span></a>
-          <a href="https://github.com/SantiagoOrdonez" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">SantiagoOrdonez</span></a>
-          <a href="https://github.com/saraelshawa" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">saraelshawa</span></a>
-          <a href="https://github.com/ShoaibKhan" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">ShoaibKhan</span></a>
-          <a href="https://github.com/ujan75" target="_blank" rel="noopener noreferrer" class="bg-ink p-5 lg:p-6 group hover:bg-paper hover:text-ink transition-colors duration-300"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg break-all">ujan75</span></a>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg opacity-60">Anonymous</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDIVIDUAL DONORS -->
-    <section class="py-24 md:py-32 relative border-b frame-border bg-paper-dark/5">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16">
-        <div class="reveal mb-16">
-          <div class="text-xs uppercase tracking-widest text-blood mb-6">Individual Donors</div>
-          <h2 class="font-sans font-bold tracking-tight text-4xl md:text-5xl leading-[1.1] max-w-3xl">
-            People who gave directly.
-          </h2>
-          <p class="opacity-60 max-w-xl mt-6 leading-relaxed">
-            One-time and direct contributions, from friends, colleagues, and strangers who believed in the work.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-paper/10 border frame-border reveal">
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">J. Mukherjee</span></div>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">S. Hu</span></div>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">S. El-Shawa</span></div>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">U. Jan</span></div>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">A. Malpani</span></div>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">J. Jacks</span></div>
-          <div class="bg-ink p-5 lg:p-6"><span class="font-sans font-semibold tracking-tight text-base lg:text-lg">S. Bangash</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLOSING -->
-    <section class="py-24 md:py-40 relative overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 flex items-center justify-center">
-        <svg class="w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] animate-slow-spin text-paper" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.2">
-          <circle cx="50" cy="50" r="48" stroke-dasharray="2 4"/>
-          <circle cx="50" cy="50" r="35" />
-          <path d="M 50 2 L 50 98 M 2 50 L 98 50" />
-        </svg>
-      </div>
-      <div class="crosshair top-0 left-0 -translate-x-[6px] -translate-y-[6px]"></div>
-      <div class="crosshair bottom-0 right-0 translate-x-[6px] translate-y-[6px]"></div>
-      <div class="max-w-3xl mx-auto px-6 text-center relative reveal">
-        <h3 class="font-sans font-bold tracking-tight italic text-4xl md:text-6xl leading-[1.1] mb-8">
-          Want to join them?
-        </h3>
-        <p class="opacity-60 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10">
-          Sponsorship keeps this work going and pays it forward to the next builder who needs it.
-        </p>
-        <a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="inline-block font-sans font-bold tracking-tight text-lg border frame-border px-8 py-4 hover:bg-paper hover:text-ink transition-colors duration-300">
-          Sponsor on GitHub
-        </a>
-      </div>
-    </section>
-
-    <footer class="py-24 relative overflow-hidden border-t frame-border">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 relative z-10">
-        <div>
-          <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-10 md:h-14 w-auto mb-8 object-contain" />
-        </div>
-
-        <div class="flex gap-12 sm:gap-16 text-xs uppercase tracking-widest">
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Internal</li>
-            <li><a href="index.html" class="nav-link relative pb-1">Home</a></li>
-            <li><a href="impact.html" class="nav-link relative pb-1">Impact Ledger</a></li>
-            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
-            <li><a href="credits.html" class="nav-link relative pb-1">Credits</a></li>
-          </ul>
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Social</li>
-            <li><a href="https://www.linkedin.com/company/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/greysoftware" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">Instagram</a></li>
-            <li><a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">GitHub</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-      for (let i = 0; i < revealElements.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = revealElements[i].getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-          revealElements[i].classList.add('active');
-        }
-      }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
+<script type="module" src="/motion.js"></script>
 </body>
 </html>

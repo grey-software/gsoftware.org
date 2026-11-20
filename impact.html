@@ -1,157 +1,123 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impact Ledger | Grey Software</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impact | Grey Software</title>
+<meta name="description" content="Who Grey Software sponsors and funds: open source maintainers since 2020, a Pashto language model grant, and the Code for Pakistan hackathon.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grey Software">
+<meta property="og:title" content="Impact | Grey Software">
+<meta property="og:description" content="Who Grey Software sponsors and funds, and how much.">
+<meta property="og:image" content="https://greysoftware.org/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Our grey matter is more important than ever. Open software and open education from a Canadian nonprofit.">
+<meta property="og:url" content="https://greysoftware.org/impact">
+<link rel="canonical" href="https://greysoftware.org/impact">
+<link rel="icon" href="img/mark-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/mark-180.png">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+/* Before first paint: turn the motion layer on, and split headlines into words as they are parsed, so nothing shifts or flashes when motion.js arrives. */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
+  // If motion.js never arrives, give the page back whole rather than leave entrances hidden.
+  setTimeout(() => { if (!window.gsMotion) document.documentElement.classList.remove('motion'); }, 4000);
+  window.gsSplit = el => {
+    if (!el || el.dataset.split === 'done') return;
+    const text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    el.dataset.split = 'done';
+  };
+})();
+</script>
 </head>
-<body class="font-mono text-sm antialiased selection:bg-blood selection:text-paper">
-  <div class="fixed top-0 left-0 w-full h-12 border-b frame-border z-40 flex items-center justify-between px-4 sm:px-6 lg:px-12 bg-ink/80 backdrop-blur-md text-paper">
-    <a href="index.html" class="flex items-center">
-      <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-4 sm:h-5 w-auto object-contain" />
-    </a>
-    <nav class="flex items-center gap-5 sm:gap-8 lg:gap-10 text-xs tracking-widest uppercase">
-      <a href="impact.html" class="relative nav-link opacity-100 font-bold">Impact</a>
-      <a href="lineage.html" class="relative nav-link opacity-60">Lineage</a>
-      <a href="credits.html" class="relative nav-link opacity-60">Credits</a>
-    </nav>
-  </div>
-  <div class="fixed top-12 right-0 w-12 h-[calc(100vh-3rem)] border-l frame-border z-30 hidden md:block"></div>
+<body>
+<a class="skip" href="#record">Skip to the ledger</a>
+<header class="top">
+  <a class="logo" href="./" aria-label="Grey Software, home"><img src="img/logo-black.png" alt="Grey Software" width="717" height="108"></a>
+  <nav aria-label="Main"><a href="./#work">Work</a><a href="impact.html" aria-current="page">Impact</a><a href="about/">About</a></nav>
+</header>
 
-  <main class="pt-12 md:pl-12 md:pr-12 min-h-screen">
-    <section class="max-w-5xl mx-auto border-x frame-border">
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+<main>
+  <section class="page-head">
+    <h1 class="title" data-split>Where the money goes.</h1>
+    <script>window.gsSplit && gsSplit(document.currentScript.previousElementSibling)</script>
+    <p data-reveal style="--d:4">Grey Software funds people doing quiet, useful work that large institutions pass over. Every amount here is in US dollars.</p>
+  </section>
 
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 relative flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">June 2026</div>
-          <div class="mt-auto pt-8">
-            <div class="w-3 h-3 bg-blood rounded-full animate-pulse shadow-[0_0_10px_rgba(137,35,35,0.8)]"></div>
-          </div>
-        </div>
-
-        <div class="md:col-span-3 p-8 lg:p-12 pl-8 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-8">Code for Pakistan Hackathon</h3>
-
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              Grey Software partnered with Code for Pakistan for their civic tech hackathon, contributing a direct <span class="font-bold uppercase text-paper md:bg-paper md:text-ink md:px-2 md:py-0.5">$300 USD donation</span> and brokering <span class="font-bold uppercase text-paper md:bg-paper md:text-ink md:px-2 md:py-0.5">$1,000 in Scrimba subscriptions</span> as prizes for winning teams.
-            </p>
-            <p>
-              Grey Software was promoted as a sponsor to participants throughout the hackathon.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 relative flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">2020–Present</div>
-        </div>
-
-        <div class="md:col-span-3 p-8 lg:p-12 pl-8 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-8">Open Source Maintainer Sponsorships</h3>
-
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              Open source infrastructure is often maintained by individuals doing quiet, essential work. Since 2020, we've used GitHub Sponsors to send recurring support to open source maintainers who keep useful software available to everyone.
-            </p>
-            <div class="mt-8 p-6 bg-paper-dark/5 border-l-2 frame-border">
-              <p>
-                <span class="font-bold uppercase text-paper md:bg-paper md:text-ink md:px-2 md:py-0.5">$939+ sponsored to date</span>, with <span class="font-bold uppercase text-paper md:bg-paper md:text-ink md:px-2 md:py-0.5">$40/month</span> currently active.
-              </p>
-              <span class="text-xs uppercase tracking-widest opacity-50 block mt-6 mb-2">Sponsored</span>
-              <p>
-                <a href="https://github.com/sponsors/mifi" target="_blank" rel="noopener noreferrer" class="nav-link relative">mifi</a>,
-                <a href="https://github.com/sponsors/egoist" target="_blank" rel="noopener noreferrer" class="nav-link relative">egoist</a>,
-                <a href="https://github.com/sponsors/paulmillr" target="_blank" rel="noopener noreferrer" class="nav-link relative">paulmillr</a>,
-                <a href="https://github.com/sponsors/privatenumber" target="_blank" rel="noopener noreferrer" class="nav-link relative">privatenumber</a>,
-                <a href="https://github.com/sponsors/stevebauman" target="_blank" rel="noopener noreferrer" class="nav-link relative">stevebauman</a>,
-                <a href="https://github.com/sponsors/antfu" target="_blank" rel="noopener noreferrer" class="nav-link relative">antfu</a>,
-                <a href="https://github.com/sponsors/tibbi" target="_blank" rel="noopener noreferrer" class="nav-link relative">tibbi</a>,
-                <a href="https://github.com/sponsors/parse-community" target="_blank" rel="noopener noreferrer" class="nav-link relative">parse-community</a>,
-                <a href="https://github.com/sponsors/rstoenescu" target="_blank" rel="noopener noreferrer" class="nav-link relative">rstoenescu</a>,
-                <a href="https://github.com/sponsors/babel" target="_blank" rel="noopener noreferrer" class="nav-link relative">babel</a>,
-                <a href="https://github.com/sponsors/typicode" target="_blank" rel="noopener noreferrer" class="nav-link relative">typicode</a>,
-                <a href="https://github.com/sponsors/jsbroks" target="_blank" rel="noopener noreferrer" class="nav-link relative">jsbroks</a>,
-                <a href="https://github.com/sponsors/jsilva-pt" target="_blank" rel="noopener noreferrer" class="nav-link relative">jsilva-pt</a>,
-                and <a href="https://github.com/sponsors/Charlie85270" target="_blank" rel="noopener noreferrer" class="nav-link relative">Charlie85270</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="grid grid-cols-1 md:grid-cols-4 border-t frame-border group relative reveal">
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-blood scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
-
-        <div class="md:col-span-1 border-b md:border-b-0 md:border-r frame-border p-8 lg:p-12 relative flex flex-col justify-start">
-          <div class="font-sans font-bold tracking-tight italic text-3xl">2026 – Ongoing</div>
-          <div class="mt-auto pt-8">
-            <div class="w-3 h-3 bg-blood rounded-full animate-pulse shadow-[0_0_10px_rgba(137,35,35,0.8)]"></div>
-          </div>
-        </div>
-
-        <div class="md:col-span-3 p-8 lg:p-12 pl-8 lg:pl-16">
-          <h3 class="font-sans font-bold tracking-tight text-4xl lg:text-5xl mb-8">Pashto &amp; Underrepresented Language Models</h3>
-
-          <div class="space-y-6 text-sm lg:text-base opacity-80 max-w-2xl leading-relaxed">
-            <p>
-              Grey Software has awarded <span class="font-bold uppercase text-paper md:bg-paper md:text-ink md:px-2 md:py-0.5">a $600 USD research grant over four months</span> to <a href="https://huggingface.co/junaid008" target="_blank" rel="noopener noreferrer" class="nav-link relative">Junaid Ahmad</a>, who is building language models and speech recognition tools for Pashto and other underrepresented languages in Pakistan. This builds on earlier support: two months of Colab Pro and a month of Hugging Face Pro.
-            </p>
-            <p>
-              This is the kind of work that doesn't get funded by large institutions. Too specific, too local, too far from the centres of capital. That's exactly why it belongs here.
-            </p>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <footer class="py-24 mt-24 relative overflow-hidden border-t frame-border">
-      <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 relative z-10">
-        <div>
-          <img src="logos/logo-white-unpadded.png" alt="Grey Software" class="h-10 md:h-14 w-auto mb-8 object-contain" />
-        </div>
-
-        <div class="flex gap-12 sm:gap-16 text-xs uppercase tracking-widest">
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Internal</li>
-            <li><a href="index.html" class="nav-link relative pb-1">Home</a></li>
-            <li><a href="impact.html" class="nav-link relative pb-1">Impact Ledger</a></li>
-            <li><a href="lineage.html" class="nav-link relative pb-1">The Lineage</a></li>
-            <li><a href="credits.html" class="nav-link relative pb-1">Credits</a></li>
-          </ul>
-          <ul class="space-y-4">
-            <li class="opacity-40 border-b frame-border pb-2 mb-4">Social</li>
-            <li><a href="https://www.linkedin.com/company/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/greysoftware" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">Instagram</a></li>
-            <li><a href="https://github.com/grey-software" target="_blank" rel="noopener noreferrer" class="nav-link relative pb-1">GitHub</a></li>
-          </ul>
-        </div>
+  <section class="record" id="record" aria-label="The ledger">
+    <article class="entry" data-reveal>
+      <p class="when">2020 to now</p>
+      <h2>Open source maintainers</h2>
+      <div class="body">
+        <p>Open source infrastructure is often kept up by individuals doing quiet, essential work. Since 2020 we have sent recurring support through GitHub Sponsors to maintainers who keep useful software free for everyone.</p>
+        <p class="fig">$3,128 to date, with eight sponsorships active at about $139 a month.</p>
+        <p>Figures from GitHub Sponsors on 20 November 2026.</p>
+        <ul class="names" aria-label="Sponsored maintainers and projects">
+          <li><a href="https://github.com/sponsors/mifi">mifi</a></li>
+          <li><a href="https://github.com/sponsors/egoist">egoist</a></li>
+          <li><a href="https://github.com/sponsors/paulmillr">paulmillr</a></li>
+          <li><a href="https://github.com/sponsors/privatenumber">privatenumber</a></li>
+          <li><a href="https://github.com/sponsors/stevebauman">stevebauman</a></li>
+          <li><a href="https://github.com/sponsors/antfu">antfu</a></li>
+          <li><a href="https://github.com/sponsors/tibbi">tibbi</a></li>
+          <li><a href="https://github.com/sponsors/parse-community">parse-community</a></li>
+          <li><a href="https://github.com/sponsors/rstoenescu">rstoenescu</a></li>
+          <li><a href="https://github.com/sponsors/babel">babel</a></li>
+          <li><a href="https://github.com/sponsors/typicode">typicode</a></li>
+          <li><a href="https://github.com/sponsors/jsbroks">jsbroks</a></li>
+          <li><a href="https://github.com/sponsors/jsilva-pt">jsilva-pt</a></li>
+          <li><a href="https://github.com/sponsors/Charlie85270">Charlie85270</a></li>
+          <li><a href="https://github.com/sponsors/cfillion">cfillion</a></li>
+          <li><a href="https://github.com/sponsors/OxyHQ">OxyHQ</a></li>
+          <li><a href="https://github.com/sponsors/responsively-org">responsively-org</a></li>
+        </ul>
       </div>
-    </footer>
-  </main>
+    </article>
 
-  <script>
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-      for (let i = 0; i < revealElements.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = revealElements[i].getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-          revealElements[i].classList.add('active');
-        }
-      }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
+    <article class="entry" data-reveal>
+      <p class="when">2026, over four months</p>
+      <h2>Pashto language models</h2>
+      <div class="body">
+        <p>We awarded a research grant over four months to <a href="https://huggingface.co/junaid008">Junaid Ahmad</a>, who builds language models and speech recognition for Pashto and other underserved languages in Pakistan. It builds on earlier support: two months of Colab Pro and a month of Hugging Face Pro.</p>
+        <p class="fig">$600 over four months.</p>
+        <p>Work this specific and this local rarely gets funded by large institutions. That is why it belongs here.</p>
+      </div>
+    </article>
+
+    <article class="entry" data-reveal>
+      <p class="when">June 2026</p>
+      <h2>Code for Pakistan hackathon</h2>
+      <div class="body">
+        <p>We partnered with Code for Pakistan for their civic tech hackathon, with a direct donation and Scrimba subscriptions we arranged as prizes for the winning teams. Grey Software was named as a sponsor to participants throughout.</p>
+        <p class="fig">$300, and $1,000 in Scrimba subscriptions.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-h">
+    <h2 id="cta-h" data-reveal>This ledger grows with every sponsor.</h2>
+    <div data-reveal style="--d:1">
+      <p>Sponsorship keeps this work going and pays it forward to the next builder who needs it.</p>
+      <p style="margin-top:1.5rem"><a class="go" href="https://github.com/sponsors/grey-software">Sponsor on GitHub</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-id">
+    <img src="img/logo-black.png" alt="Grey Software" width="717" height="108" loading="lazy">
+    <p>A registered Canadian nonprofit, not a charity.</p>
+  </div>
+  <nav aria-label="Pages"><a href="./">Home</a><a href="about/">About</a><a href="impact.html" aria-current="page">Impact</a><a href="lineage.html">Lineage</a><a href="credits.html">Credits</a></nav>
+</footer>
+
+<script type="module" src="/motion.js"></script>
 </body>
 </html>
